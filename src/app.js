@@ -118,6 +118,16 @@ app.get('/health', (req, res) => {
   });
 });
 
+
+
+// Handle 404 - Route not found
+app.use((req, res) => {
+  res.status(404).json({
+    success: false,
+    message: `Cannot ${req.method} ${req.originalUrl} - Route not found`,
+  });
+});
+
 // Optional: Friendly message on root
 app.get('/', (req, res) => {
   res.json({
@@ -128,16 +138,6 @@ app.get('/', (req, res) => {
     timestamp: new Date().toISOString()
   });
 });
-
-// Handle 404 - Route not found
-app.use((req, res) => {
-  res.status(404).json({
-    success: false,
-    message: `Cannot ${req.method} ${req.originalUrl} - Route not found`,
-  });
-});
-
-
 
 
 // Global error handler (must be last)

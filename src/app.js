@@ -167,6 +167,7 @@ const app = express();
 
 // Security middleware (early)
 app.use(helmet());
+app.set('trust proxy', 1);
 
 // CORS configuration (early)
 app.use(

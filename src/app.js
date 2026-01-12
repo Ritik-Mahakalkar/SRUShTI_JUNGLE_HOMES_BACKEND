@@ -66,11 +66,10 @@ app.use((req, res) => {
 app.get('/', (req, res) => {
   res.json({
     success: true,
-    message: 'Welcome to The Core Pench Hotel Management API',
-    version: '1.0.0',
-    docs: 'API endpoints are under /api/v1',
+    message: 'Welcome to SRUShTI JUNGLE HOMES API',
     health: '/health',
-    timestamp: new Date().toISOString(),
+    apiBase: '/api/v1',
+    timestamp: new Date().toISOString()
   });
 });
 

@@ -61,9 +61,7 @@ app.use((req, res) => {
   });
 });
 
-app.get('/health', (req, res) => {
-  res.status(200).json({ status: 'ok', uptime: process.uptime() });
-});
+
 // Optional: Friendly message on root
 app.get('/', (req, res) => {
   res.json({

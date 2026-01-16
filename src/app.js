@@ -170,12 +170,14 @@ app.use(helmet());
 app.set('trust proxy', 1);
 
 // CORS configuration (early)
-app.use(
-  cors({
-    origin: process.env.FRONTEND_URL || 'http://localhost:3000',
-    credentials: true,
-  })
-);
+// app.use(
+//   cors({
+//     origin: process.env.FRONTEND_URL || 'http://localhost:3000',
+//     credentials: true,
+//   })
+// );
+
+app.use(cors());
 
 // Request logging
 if (process.env.NODE_ENV === 'development') {
